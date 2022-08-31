@@ -3,24 +3,19 @@ lst = [i for i in range(1, 31)]
 def stavka(lot, amount):
     win_lot = choice(lst)
     if lot == win_lot:
-        print(f'Вы выиграли {amount*2}$ T_T')
+        print(f'Вы выиграли: {amount*2}')
         return amount * 2
     print(f'Вы проиграли {amount}$ :D')
     return -amount
 if __name__ == 'main':
     print(lst)
-
 import os
 from envparse import env
 env.read_envfile('settings.env')
 money = int(os.getenv('MY_MONEY'))
-
-
-gain = 0
-lost = 0
 total = 0
-
-
+lost = 0
+gain = 0
 while True:
     commands = input('Введите слот и ставку или exit-almaz для выхода: ').split()
     if commands[0] == 'exit':
